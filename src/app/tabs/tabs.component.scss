@@ -1,0 +1,64 @@
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f8f9fa;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 10vw; /*  Takes 10% of the screen width */
+  min-width: 100px;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.tab-content {
+  margin-left: 11vw; /*  Pushes content to the right */
+  width: 85vw; /*  Makes sure content takes the remaining space */
+  padding: 20px;
+}
+
+button {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #333;
+  width: 100%; 
+  text-align: left;
+}
+
+button:hover {
+  background-color: #d6d6d6;
+}
+
+button.active {
+  background-color: #007bff;
+  color: white;
+  text-decoration: underline;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ התאמה למסכים קטנים */
+@media (max-width: 600px) {
+  .tabs-container {
+    width: 15vw; /* ✅ במסכים קטנים, התפריט יהיה קצת יותר רחב (15%) */
+    min-width: 80px;
+  }
+
+  .tab-content {
+    margin-left: 18vw; /* ✅ Adjusts the content area */
+    width: 75vw;
+  }
+
+  button {
+    font-size: 12px; /* ✅ כפתורים קטנים יותר בטלפונים */
+    padding: 8px;
+  }
+}

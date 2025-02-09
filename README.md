@@ -1,59 +1,57 @@
-# DogAdoptionApp
+Dog Adoption App
+This is a Dog Adoption Platform built with Angular 19. It allows users to search for dog breeds and submit adoption requests. The app integrates with an external API to fetch breed data and images.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+ Features
+Dynamic Navigation: Tab-based navigation between the breed search and adoption form.
+API Integration: Fetches real-time breed information and images.
+Reactive Forms: Uses Angular Reactive Forms for the adoption form.
+State Management: Manages state using RxJS BehaviorSubject.
+Responsive UI: Optimized for mobile and desktop.
 
-## Development server
+ Project Structure
 
-To start a local development server, run:
+/src
+ ├── app/
+ │   ├── components/
+ │   │   ├── tabs/            # Navigation between sections
+ │   │   ├── search/          # Search for breeds
+ │   │   ├── adoption-form/   # Adoption form
+ │   ├── services/
+ │   │   ├── dog.service.ts   # Handles API calls and state management
+ │   ├── app.component.ts     # Root component
+ ├── assets/                  # Images, styles
+ ├── environments/            # API configuration
 
-```bash
+ Installation & Setup
+1️⃣ Install Dependencies
+npm install
+
+2️⃣ Run the Development Server
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then, open http://localhost:4200 in your browser.
 
-## Code scaffolding
+ API Integration
+The app retrieves data from Dog CEO API and supports:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Fetching all available breeds
+Searching for specific breeds
+Fetching random breed images
+Selecting number of images per request
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+ Running Tests
+To execute unit tests, use:
 ng test
-```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
+For end-to-end testing:
 ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+ Building for Production
+To create a production-ready build, run:
+ng build --configuration=production
+The output will be stored in the /dist folder.
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+ Additional Notes
+The search component allows filtering breeds in real time.
+The adoption form ensures that required fields are validated before submission.
+The app is structured using Angular best practices, including modularization and service-based API calls.

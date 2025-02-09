@@ -1,0 +1,24 @@
+<form [formGroup]="searchForm" class="search-form">
+    <!-- Dropdown for breeds -->
+    <label for="breed">Select a Breed:</label>
+    <select id="breed" formControlName="breed">
+      <option value="" disabled>Select a breed</option>
+      <option *ngFor="let breed of breeds" [value]="breed">{{ breed }}</option>
+    </select>
+  
+    <!-- Number input for count -->
+    <label for="count">Number of Dogs:</label>
+    <input type="number" id="count" formControlName="count"
+       min="1" max="50" (keypress)="validateNumberInput($event)">
+  
+    <!-- Validation Errors -->
+    <div *ngIf="searchForm.controls['count'].invalid && searchForm.controls['count'].touched" class="error">
+      Enter a number between 1 and 50.
+    </div>
+  </form>
+  
+  <!-- Dog Images Album -->
+  <div class="dog-album">
+    <img *ngFor="let image of dogImages" [src]="image" alt="Dog image">
+  </div>
+  

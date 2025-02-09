@@ -1,0 +1,75 @@
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+    width: 400px;
+    margin: 0 auto; /* Center the form */
+    padding: 15px;
+    background: #f8f9fa; /* Light background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input, select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 90%; 
+    box-sizing: border-box; 
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+  }
+  
+  /*  Responsive Dog Album */
+  .dog-album {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  /*  Ensure images fit nicely */
+  .dog-album img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .dog-album img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  /*  Mobile optimizations */
+  @media (max-width: 600px) {
+    .search-form {
+      width: 90%; /* Make form smaller on small screens */
+      padding: 10px;
+    }
+  
+    .dog-album {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+  
+    .dog-album img {
+      max-width: 150px; /* Reduce image size for better fit */
+    }
+
+    label {
+      text-align: center;
+      }
+  }
+  

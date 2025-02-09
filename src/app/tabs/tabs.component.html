@@ -1,0 +1,11 @@
+<div class="tabs-layout">
+  <div class="tabs-container">
+    <button (click)="activeTab = 'search'" [ngClass]="{'active': activeTab === 'search'}">Search</button>
+    <button (click)="activeTab = 'adoption'" [ngClass]="{'active': activeTab === 'adoption'}">Adoption Form</button>
+  </div>
+
+  <div class="tab-content">
+    <app-search *ngIf="activeTab === 'search'"></app-search>
+    <app-adoption-form *ngIf="activeTab === 'adoption'"></app-adoption-form>
+  </div>
+</div>
